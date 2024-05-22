@@ -5,7 +5,15 @@
 </script>
 
 <article>
-    <header>{user.firstName} {user.lastName}</header>
-    I hail from {user.address.city}, {user.address.state}
-    <footer>{user.ip}</footer>
+    <header>
+        <h3>{user.name.title} {user.name.first} {user.name.last}</h3>
+    </header>
+
+    <img
+        src={user.picture.thumbnail}
+        alt={`Photo of ${user.name.first} ${user.name.last}`}
+    />
+    <footer>
+        {user.location.city}, {user.location.state}, {user.location.country}
+    </footer>
 </article>

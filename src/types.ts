@@ -1,75 +1,88 @@
+export interface Result {
+    results: User[]
+    info: Info
+}
+
 export interface User {
-    id: number
-    firstName: string
-    lastName: string
-    maidenName: string
-    age: number
     gender: string
+    name: Name
+    location: Location
     email: string
+    login: Login
+    dob: Dob
+    registered: Registered
     phone: string
-    username: string
-    password: string
-    birthDate: string
-    image: string
-    bloodGroup: string
-    height: number
-    weight: number
-    eyeColor: string
-    hair: Hair
-    domain: string
-    ip: string
-    address: Address
-    macAddress: string
-    university: string
-    bank: Bank
-    company: Company
-    ein: string
-    ssn: string
-    userAgent: string
+    cell: string
+    id: Id
+    picture: Picture
+    nat: string
 }
 
-export interface Hair {
-    color: string
-    type: string
+export interface Name {
+    title: string
+    first: string
+    last: string
 }
 
-export interface Address {
-    address: string
+export interface Location {
+    street: Street
     city: string
-    coordinates: Coordinates
-    postalCode: string
     state: string
+    country: string
+    postcode: string
+    coordinates: Coordinates
+    timezone: Timezone
+}
+
+export interface Street {
+    number: number
+    name: string
 }
 
 export interface Coordinates {
-    lat: number
-    lng: number
+    latitude: string
+    longitude: string
 }
 
-export interface Bank {
-    cardExpire: string
-    cardNumber: string
-    cardType: string
-    currency: string
-    iban: string
+export interface Timezone {
+    offset: string
+    description: string
 }
 
-export interface Company {
-    address: Address2
-    department: string
+export interface Login {
+    uuid: string
+    username: string
+    password: string
+    salt: string
+    md5: string
+    sha1: string
+    sha256: string
+}
+
+export interface Dob {
+    date: string
+    age: number
+}
+
+export interface Registered {
+    date: string
+    age: number
+}
+
+export interface Id {
     name: string
-    title: string
+    value: string
 }
 
-export interface Address2 {
-    address: string
-    city: string
-    coordinates: Coordinates2
-    postalCode: string
-    state: string
+export interface Picture {
+    large: string
+    medium: string
+    thumbnail: string
 }
 
-export interface Coordinates2 {
-    lat: number
-    lng: number
+export interface Info {
+    seed: string
+    results: number
+    page: number
+    version: string
 }

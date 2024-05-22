@@ -9,11 +9,12 @@
     console.time("call");
     let promises = [];
     for (let i = 1; i <= bound!; i++) {
-      promises.push(fetchUser(i));
+      promises.push(fetchUser());
     }
 
     try {
-      users = await Promise.all(promises);
+      const res = await Promise.all(promises);
+      users = res.flatMap((res) => res.results[0]);
     } catch (e) {
       console.error("Fetch requests failed", e.toString());
     }
